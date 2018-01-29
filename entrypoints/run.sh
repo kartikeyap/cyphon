@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright 2017 Dunbar Security Solutions, Inc.
+# Copyright 2017-2018 Dunbar Security Solutions, Inc.
 #
 # This file is part of Cyphon Engine.
 #
@@ -49,6 +49,7 @@ if [ "$CYPHON_ENV" = 'PROD' ]; then
          --bind 0.0.0.0:8000 \
          --workers 3 \
          --log-level=warning \
+         --log-file=- \
          "$@"  # allow additional arguments when starting container
 
 elif [ "$CYPHON_ENV" = 'TEST' ]; then
